@@ -1,0 +1,30 @@
+<project default="dist" name="plugin-demo">
+ <path id="compile.deps">
+  <!-- project specific dependencies -->
+  <fileset dir="lib/" erroronmissingdir="false">
+   <include name="**/*.jar" />
+  </fileset>
+  <!-- common plugin dependencies -->
+  <fileset dir="../lib/" erroronmissingdir="false">
+   <include name="**/*.jar" />
+  </fileset>
+ </path> 
+
+ <target name="clean">
+  <delete dir="built" quiet="true" />  
+ </target>
+
+ <target name="compile" depends="clean">
+  <mkdir dir="built/classes" />
+  <javac destdir="built/classes" encoding="UTF-8" debug="true" includeantruntime="false">
+    <classpath>
+     <path refid="compile.deps" />
+   </classpath>
+   <src path="src" />
+  </javac>
+ </target>
+ 
+ <target name="dist" depends="clean,compile">
+  <jar destfile="built/${ant.project.name}.jar" basedir="built/classes" />
+ </target>
+</project>

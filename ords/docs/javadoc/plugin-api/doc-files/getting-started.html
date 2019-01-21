@@ -1,0 +1,663 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Oracle REST Data Services Java API Reference &#x2013; Introduction</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: 'Helvetica Neue', 'Neue Helvetica', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  white-space: pre-wrap; 
+  white-space: -moz-pre-wrap;
+  word-wrap: break-word;
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+#banner {
+	display: none;
+}
+
+#leftColumn {
+	display: none;
+}
+
+#breadcrumbs {
+	display: none;
+}
+
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+</head>
+<body>
+<h1>Introduction</h1>
+<p>This document describes how to develop and deploy plugins that integrate with the Oracle REST Data Services (ORDS) runtime.</p>
+<div class="section">
+<h2><a name="Further_Information"></a>Further Information</h2>
+<p>For a more a more detailed reference, consult the <a href="./developer-guide.html">developer guide</a>.</p></div>
+<div class="section">
+<h2><a name="Examples"></a>Examples</h2>
+<p>Below are some examples that give a flavour of the programming model.</p>
+<div class="section">
+<h3><a name="Hello_World"></a>Hello World</h3>
+<p>The Hello World example below demonstrates the basics of creating a request handler plugin:</p>
+
+<div>
+<div>
+<pre class="source">@Dispatches(@PathTemplate(&quot;/hello&quot;)) 
+@Provides                            
+public class HelloWorld extends HttpServlet {
+ public doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+ 	response.setContentType(&quot;text/plain&quot;);
+ 	response.getWriter().println(&quot;Hello World&quot;);
+ }
+}
+</pre></div></div>
+
+<ul>
+
+<li>Create a class that sub-classes <a class="externalLink" href="http://docs.oracle.com/javaee/6/api/javax/servlet/http/HttpServlet.html">HttpServlet</a>.</li>
+<li>Advertise the class to the Dependency Injection framework via the <a href="./oracle/dbtools/plugin/api/di/annotations/Provides.html">@Provides</a> annotation</li>
+<li>Advertise the class to the request dispatching framework via the <a href="./oracle/dbtools/plugin/api/http/annotations/Dispatches.html">@Dispatches</a> annotation</li>
+<li>Advertise the request path that the class responds to via the <a href="./oracle/dbtools/plugin/api/http/annotations/PathTemplate.html">@PathTemplate</a> annotation</li>
+<li>Override the <a href="">HttpServlet#doGet</a> method to provide the logic of the handler.</li>
+</ul></div>
+<div class="section">
+<h3><a name="Injecting_Dependencies"></a>Injecting Dependencies</h3>
+<p>A plugin can express it&#x2019;s dependencies on external APIs using the <a class="externalLink" href="http://docs.oracle.com/javaee/6/api/javax/inject/Inject.html">@Inject</a> annotation on its constructor.</p>
+
+<div>
+<div>
+<pre class="source">@Dispatches(@PathTemplate(&quot;/uses-logging&quot;)) 
+@Provides                            
+public class UsesLogging extends HttpServlet {
+ 
+ @Inject
+ public UsesLogging(Logger log) {
+ 	this.log = log;
+ }   
+ public doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+    log.fine(&quot;received request:\n&quot; + request.toString());
+ 	response.setContentType(&quot;text/plain&quot;);
+ 	response.getWriter().println(&quot;Hello World&quot;);
+ 	log.fine(&quot;processed request&quot;);
+ }
+ 
+ private final Logger log;
+}
+</pre></div></div>
+
+<ul>
+
+<li>Before instantiating the <tt>UsesLogging</tt> type, the DI framework looks for a constructor annotated with <a class="externalLink" href="http://docs.oracle.com/javaee/6/api/javax/inject/Inject.html">@Inject</a>. It then examines the arguments of the constructor and attempts to resolve an implementation of the specified type. Once all dependencies have been resolved, the DI framework invokes the Constructor with the required arguments.</li>
+<li>In this case, the servlet uses the <a href="./oracle/dbtools/plugin/api/di/AvailableDependencies.html#LOG">Logger</a> service to log some debugging information.</li>
+<li>The set of services that can be injected is documented in the <a href="./oracle/dbtools/plugin/api/di/AvailableDependencies.html">AvailableDependencies</a> enum.</li>
+</ul>
+<h1>Tutorial</h1></div></div>
+<div class="section">
+<h2><a name="About_the_Tutorial_Files"></a>About the Tutorial Files</h2>
+<p>All of the files referenced in this tutorial are included in the product distribution under the <tt>examples/plugins</tt> folder:</p>
+
+<div>
+<div>
+<pre class="source">${ORDS_HOME}
+|-- examples
+     |-- plugins
+          |-- lib
+          |-- plugin-demo
+          |   |-- src
+          |-- plugin-echo-cmd
+              |-- src
+</pre></div></div>
+
+<p>where <tt>${ORDS_HOME}</tt> is the location where the product distribution was unzipped.</p></div>
+<div class="section">
+<h2><a name="Prepare_Environment"></a>Prepare Environment</h2>
+<p>Consult the instructions in the <a class="externalLink" href="http://docs.oracle.com/cd/E56351_01/index.htm">Oracle REST Services Documentation</a> to install and configure ORDS.</p>
+<div class="section">
+<h3><a name="Enable_database_schema"></a><a name="enable-schema"></a> Enable database schema</h3>
+<p>To make a database schema accessible to ORDS, it must be explicitly enabled. To demonstrate this we will create a new schema and enable it:</p>
+
+<div>
+<div>
+<pre class="source">$ sqlplus /nolog
+SQL&gt; CONNECT SYS as SYSDBA
+Enter password: SYS_password
+SQL&gt; create user TEST_SCHEMA identified by TEST_SCHEMA_password;
+SQL&gt; grant connect, resource to TEST_SCHEMA;
+SQL&gt; DISCONNECT
+SQL&gt; CONNECT TEST_SCHEMA
+Enter password: TEST_SCHEMA_password
+SQL&gt; execute ords.enable_schema;
+SQL&gt; commit;
+</pre></div></div>
+
+<p><i>Note:</i> Replace <tt>TEST_SCHEMA_password</tt> with your own choice of password.</p>
+<div class="section">
+<h4><a name="Verify_schema_is_enabled"></a>Verify schema is enabled</h4>
+<p>To verify if a schema is enabled for ORDS access, check the <tt>USER_ORDS_SCHEMAS</tt> view:</p>
+
+<div>
+<div>
+<pre class="source">SQL&gt; select * from USER_ORDS_SCHEMAS;
+
+ID PARSING_SCHEMA TYPE      PATTERN
+-- -------------- --------- -----------
+ 2 TEST_SCHEMA    BASE_PATH test_schema
+</pre></div></div>
+</div></div></div>
+<div class="section">
+<h2><a name="Creating_a_Plugin"></a>Creating a Plugin</h2>
+<p>In this guide we will walk through building and deploying the <tt>plugin-demo</tt> plugin that queries the database to determine the current database user and echo that information in the response. This example uses <a class="externalLink" href="http://ant.apache.org">Apache ANT</a> to manage the build process.</p>
+<div class="section">
+<h3><a name="Prerequisities"></a>Prerequisities</h3>
+<ul>
+
+<li>JDK 1.7 or later.</li>
+<li>Apache Ant 1.8.2 or later.</li>
+<li>Installed and configured ORDS as detailed above.</li>
+</ul></div>
+<div class="section">
+<h3><a name="About_the_Plugin_project_folder_structure"></a>About the Plugin project folder structure</h3>
+<p>The <tt>plugin-demo</tt> source files are located within the <tt>${ORDS_HOME}</tt> folder at:</p>
+
+<div>
+<div>
+<pre class="source">${ORDS_HOME}/examples/plugins/plugin-demo
+</pre></div></div>
+
+<p>The folder contains the following:</p>
+<ul>
+
+<li><tt>src</tt> folder which contains:
+<ul>
+
+<li><tt>PluginDemo.java</tt> - the Java source code of the plugin.</li>
+</ul>
+</li>
+<li><tt>build.xml</tt> - ANT build script, which compiles and packages the source code</li>
+<li><tt>built</tt> - folder generated by <tt>build.xml</tt> which will contain the packaged plugin: <tt>plugin-demo.jar</tt>.</li>
+</ul>
+<p>Located in the parent folder is a <tt>lib/</tt> folder which holds the <tt>.jar</tt> files required to compile plugins.</p>
+<div class="section">
+<h4><a name="Required_Libraries"></a>Required Libraries</h4>
+<p>To compile a plugin the following libraries must be in the classpath:</p>
+<ul>
+
+<li><a href="#pajar">plugin-api.jar</a></li>
+<li><a href="#jijar">javax.inject.jar</a></li>
+<li><a href="#sajar">servlet-api-2.5.jar</a></li>
+<li><a href="#ojdbc">ojdbc6.jar</a></li>
+</ul>
+<div class="section">
+<h5><a name="Required_Library_Locations"></a>Required Library Locations</h5>
+<p>Each of the required jars is included in the product distribution in the <tt>${ORDS_HOME}/examples/plugins/lib</tt> folder.</p></div>
+<div class="section">
+<h5><a name="About_plugin-api.jar"></a><a name="pajar"></a>About plugin-api.jar</h5>
+<p>This library provides the glue code - such as <a href="./oracle/dbtools/plugin/api/http/annotations/Dispatches.html">@Dispatches</a> - to weave the plugin into the runtime.</p></div>
+<div class="section">
+<h5><a name="About_javax.inject.jar"></a><a name="jijar"></a>About javax.inject.jar</h5>
+<p>This library provides the <a class="externalLink" href="http://docs.oracle.com/javaee/6/api/javax/inject/package-summary.html">JSR-330 API</a> types such as <a class="externalLink" href="http://docs.oracle.com/javaee/6/api/javax/inject/Inject.html">@Inject</a>.</p></div>
+<div class="section">
+<h5><a name="About_servlet-api-2.5.jar"></a><a name="sajar"></a>About servlet-api-2.5.jar</h5>
+<p>This library provides the <a class="externalLink" href="http://docs.oracle.com/javaee/6/api/javax/servlet/http/package-summary.html">Java Servlet 2.5 API</a> types, such as <a class="externalLink" href="http://docs.oracle.com/javaee/6/api/javax/servlet/http/HttpServlet.html">HttpServlet</a>.</p></div>
+<div class="section">
+<h5><a name="About_ojdbc6.jar"></a><a name="ojdbc"></a>About ojdbc6.jar</h5>
+<p>This library is optional and is only required if the plugin needs to access the Oracle JDBC Extension APIs such as <a class="externalLink" href="http://docs.oracle.com/cd/E16655_01/appdev.121/e17663/oracle/jdbc/OracleConnection.html">OracleConnection</a>.</p></div></div></div>
+<div class="section">
+<h3><a name="About_PluginDemo.java"></a>About PluginDemo.java</h3>
+<p>The source code of the plugin is reproduced below, following that is a point by point explanation of the source code.</p>
+
+<div>
+<div>
+<pre class="source">import java.io.IOException;
+import java.sql.*;
+import javax.inject.Inject;
+import javax.servlet.ServletException;
+import javax.servlet.http.*;
+import oracle.dbtools.plugin.api.di.annotations.Provides;
+import oracle.dbtools.plugin.api.http.annotations.*;
+import oracle.dbtools.plugin.api.routes.*;
+
+/**
+ * This example plugin {@link HttpServlet} demonstrates:
+ * &lt;ul&gt;
+ * &lt;li&gt;Using the injected {@link Connection} to query the database.&lt;/li&gt;
+ * &lt;li&gt;Using the injected {@link PathTemplates} service to decode the parameters
+ * of the servlet's {@link PathTemplateMatch}.&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 
+ * &lt;h4&gt;Testing the Servlet&lt;/h4&gt; Invoke the servlet with the following URL:
+ * 
+ * &lt;pre&gt;
+ *  http://&lt;i&gt;server&lt;/i&gt;/ords/&lt;i&gt;schema&lt;/i&gt;/demos/plugin?who=&lt;i&gt;somebody&lt;/i&gt;
+ * &lt;/pre&gt;
+ * 
+ * where:
+ * &lt;ul&gt;
+ * &lt;li&gt;&lt;i&gt;server&lt;/i&gt; is the hostname and port of the server.&lt;/li&gt;
+ * &lt;li&gt;&lt;i&gt;schema&lt;/i&gt; is the name of the REST enabled database schema.&lt;/li&gt;
+ * &lt;li&gt;&lt;i&gt;somebody&lt;/i&gt; is any value you wish, e.g. a person's name.&lt;/li&gt;
+ * &lt;ul&gt;
+ * For example:
+ * 
+ * &lt;pre&gt;
+ *  http://localhost:8080/ords/test_schema/demos/plugin?who=Scott
+ * &lt;/pre&gt;
+ * 
+ * @author cdivilly
+ *
+ */
+@Provides
+@Dispatches(@PathTemplate(&quot;/demos/plugin&quot;))
+class PluginDemo extends HttpServlet {
+  @Inject
+  PluginDemo(Connection conn, PathTemplates pathTemplates) {
+    this.conn = conn;
+    this.pathTemplates = pathTemplates;
+  }
+
+  public void doGet(HttpServletRequest request, 
+                    HttpServletResponse response)
+      throws ServletException, IOException {
+      
+    PathTemplateMatch match = pathTemplates
+                                .matchedTemplate(request);
+    try {
+      /* retrieve 'who' query parameter */
+      String who = match.parameters().get(&quot;who&quot;);
+      who = null == who ? &quot;anonymous&quot; : who;
+      
+      /* execute database query */
+      PreparedStatement ps = conn
+       .prepareStatement(&quot;select sys_context('USERENV','CURRENT_USER') from dual&quot;);
+       
+      ResultSet rs = ps.executeQuery();
+      rs.next();
+      
+      /* determine the database user */
+      String user = rs.getString(1);
+      
+      /* Print the greeting */
+      response.getWriter().println(user + &quot; says hello to: &quot; + who);
+      rs.close();
+      ps.close();
+    } catch (SQLException e) {
+      throw new ServletException(e);
+    }
+  }
+
+  private final Connection    conn;
+  private final PathTemplates pathTemplates;
+}
+</pre></div></div>
+
+<ul>
+
+<li>The <tt>PluginDemo</tt> type is annotated with <tt>@Provides</tt> to indicate that it offers a service, in this case it offers the <tt>HttpServlet</tt> service.</li>
+<li>The type is also annotated with the <tt>@Dispatches</tt> and <tt>@PathTemplate</tt> annotations which indicate the request URL pattern that the servlet listens for.</li>
+<li>The <tt>PluginDemo</tt> constructor is annotated with <tt>@Inject</tt> to indicate that this constructor should be used by the dependency injection framework to instantiate instances of the type.</li>
+<li>The arguments of the constructor indicate the types that <tt>PluginDemo</tt> depends on:
+<ul>
+
+<li>The first argument indicates that a database <tt>Connection</tt> is required, ORDS connects this connection instance to a database schema, which schema is determined by the request URL to database schema mapping rules.</li>
+<li>The second argument is the <tt>PathTemplates</tt> service which provides a method for determining the <tt>PathTemplate</tt> bound to a request.</li>
+</ul>
+</li>
+<li><tt>PluginDemo</tt> overrides the <tt>doGet()</tt> method to indicate that it supports the <tt>GET</tt> HTTP method.</li>
+<li>It uses the <tt>PathTemplates</tt> service to determine the <tt>PathTemplateMatch</tt> bound to the request.</li>
+<li>It decodes the <tt>PathTemplate</tt> parameters, and extracts the value of the <tt>who</tt> parameter.</li>
+<li>The <tt>Connection</tt> instance is queried to determine the identity of the current database user.</li>
+<li>Finally the message showing the database user and the value of the <tt>who</tt> parameter is printed in the response.</li>
+</ul></div>
+<div class="section">
+<h3><a name="Build_the_Plugin"></a>Build the Plugin</h3>
+<p>In the <tt>plugin-demo</tt> folder type the following command:</p>
+
+<div>
+<div>
+<pre class="source">$ ant
+</pre></div></div>
+
+<p>The source code will be compiled and packaged into an archive named <tt>built/plugin-demo.jar</tt></p></div>
+<div class="section">
+<h3><a name="Package_the_Plugin_in_the_Web_Application_Archive_.28WAR.29"></a>Package the Plugin in the Web Application Archive (WAR)</h3>
+<p>Update the <tt>ords.war</tt> archive to add <tt>plugin-demo.jar</tt> as follows:</p>
+<p>Invoke the <tt>plugin</tt> command to package <tt>plugin-demo.jar</tt> into <tt>ords.war</tt>:</p>
+
+<div>
+<div>
+<pre class="source">$ java -jar ../../../ords.war plugin built/plugin-demo.jar
+</pre></div></div>
+
+<h1>Test the Plugin</h1>
+<p>Start the updated <tt>ords.war</tt> in standalone mode.</p>
+
+<div>
+<div>
+<pre class="source">$ cd ${ORDS_HOME}
+$ java -jar ords.war
+</pre></div></div>
+</div></div>
+<div class="section">
+<h2><a name="About_Request_URLs"></a>About Request URLs</h2>
+<p>The plugin we have built needs a database connection to function. Therefore ORDS must be able to figure out what database and schema to connect to. ORDS does this by examine the Request URL and mapping the URL to the appropriate database pool and database schema.</p>
+<p>If ORDS cannot determine a mapping, then it will report a <tt>404 Not Found</tt> status for the request URL.</p>
+<div class="section">
+<h3><a name="Configuring_a_database_schema_mapping"></a>Configuring a database schema mapping</h3>
+<p>To map a database schema to a URL, you must enable the schema to be accessed by ORDS, as we did in the section titled <a href="#enable-schema">&#x2018;Enable Database Schema&#x2019;</a>.</p></div></div>
+<div class="section">
+<h2><a name="Try_the_Request_URL"></a>Try the Request URL</h2>
+<p>With ORDS running in standalone mode on <tt>localhost</tt>, try the following URL:</p>
+
+<div>
+<div>
+<pre class="source">http://localhost:8080/ords/test_schema/demos/plugin?who=Scott
+</pre></div></div>
+
+<p>The browser should display the following text:</p>
+
+<div>
+<div>
+<pre class="source">TEST_SCHEMA says hello to: Scott
+</pre></div></div>
+
+<ul>
+
+<li>The <tt>/test_schema</tt> portion of the request URL maps the request to the <tt>TEST_SCHEMA</tt> database schema.</li>
+<li>A <tt>Connection</tt> instance connected to the <tt>TEST_SCHEMA</tt> schema is injected into the <tt>PluginDemo</tt> instance.</li>
+<li><tt>PluginDemo</tt> queries the <tt>Connection</tt> to determine the current user and decodes the <tt>{who}</tt> parameter bound to the request URL, and uses this information to construct the message displayed above.</li>
+</ul></div>
+</body>
+</html>

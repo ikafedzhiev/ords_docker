@@ -1,0 +1,475 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Oracle REST Data Services Java API Reference &#x2013; Introduction</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: 'Helvetica Neue', 'Neue Helvetica', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  white-space: pre-wrap; 
+  white-space: -moz-pre-wrap;
+  word-wrap: break-word;
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+#banner {
+	display: none;
+}
+
+#leftColumn {
+	display: none;
+}
+
+#breadcrumbs {
+	display: none;
+}
+
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+</head>
+<body>
+<h1>Introduction</h1>
+<p>This document provides a complete reference for the plugin programming model.</p>
+<div class="section">
+<h2><a name="Getting_Started"></a>Getting Started</h2>
+<p>For a quick introduction to developing plugins please consult the <a href="./getting-started.html">getting started guide</a>.</p></div>
+<div class="section">
+<h2><a name="Plugin_API_Goals"></a>Plugin API Goals</h2>
+<ul>
+
+<li>Small learning curve: Build on existing Java SE, Java EE APIs and programming models</li>
+<li>Low Coupling: Minimize external code dependencies, only requiring:
+<ul>
+
+<li>Java SE dependencies</li>
+<li>Java EE Servlet and javax.inject dependencies</li>
+<li>Minimal ORDS glue code dependencies.</li>
+</ul>
+</li>
+</ul>
+<p>These goals are met by leveraging the <a class="externalLink" href="http://docs.oracle.com/javaee/6/api/javax/servlet/http/package-summary.html">Java EE Servlet API</a> and the <a class="externalLink" href="http://docs.oracle.com/javaee/6/api/javax/inject/package-summary.html">JSR-330 Dependency Injection</a> Framework, along with a small set of custom annotations that enable <tt>HttpServlet</tt>s to be plugged in without resorting to editing a <tt>web.xml</tt> deployment descriptor.</p></div>
+<div class="section">
+<h2><a name="Extension_Points"></a>Extension Points</h2>
+<p>Plugins can plug in additional logic at the following extension points:</p>
+<ul>
+
+<li>Fulfilling HTTP requests by extending <a class="externalLink" href="http://docs.oracle.com/javaee/6/api/javax/servlet/http/HttpServlet.html">HttpServlet</a>.</li>
+<li>Manipulating HTTP requests and responses by implementing the servlet <a class="externalLink" href="http://docs.oracle.com/javaee/6/api/javax/servlet/Filter.html">Filter</a> interface.</li>
+<li>Responding to application startup/shutdown, by implementing the <a href="./oracle/dbtools/plugin/api/Lifecycle.html">Lifecycle</a> interface.</li>
+</ul>
+<p>We call these extension points, <i>services</i>. A service is simply any type on which another type depends. The <a href="./oracle/dbtools/plugin/api/Plugin.html">ExtensionPoints</a> type enumerates the available extension points.</p></div>
+<div class="section">
+<h2><a name="Plugin_Provider"></a>Plugin Provider</h2>
+<p>A <i>provider</i> is any Java type annotated with the <a href="./oracle/dbtools/plugin/api/di/annotations/Provides.html">@Provides</a> annotation. A <i>provider</i> provides one or more <i>services</i>. See the <a href="./oracle/dbtools/plugin/api/di/annotations/Provides.html">@Provides</a> documentation for more information about how to express what <i>services</i> a <i>provider</i> offers.</p></div>
+<div class="section">
+<h2><a name="Provider_Lifecycle"></a>Provider Lifecycle</h2>
+<p>Providers can have one of two life-cycles:</p>
+<ul>
+
+<li><a href="./oracle/dbtools/plugin/api/di/annotations/ApplicationScoped.html">@ApplicationScoped</a> - instantiated when the ORDS is started by an application server, destroyed when the application server stops/restarts ORDS.</li>
+<li><a href="./oracle/dbtools/plugin/api/di/annotations/RequestScoped.html">@RequestScoped</a> - instantiated when first required to process a HTTP request, destroyed when the request has completed processing.</li>
+</ul>
+<p>By default all types annotated with <tt>@Provides</tt> are given a <tt>@RequestScoped</tt> life-cycle. This means that for each request a new instance of the type is instantiated, and that instance is destroyed once processing of the request has completed.</p>
+<p>Since each request is processed in a single thread, this means that, <tt>@RequestScoped</tt> services:</p>
+<ul>
+
+<li>Only exist in a single thread, so do not need to be thread-safe, making them easier to develop.</li>
+<li>Can safely hold per request state in member variables.</li>
+<li>Are instantiated and destroyed very frequently. Instantiation/destruction must be efficient.</li>
+<li>Can depend on other <tt>@RequestScoped</tt> services.</li>
+<li>Can depend on <tt>@ApplicationScoped</tt> services.</li>
+</ul>
+<p>Since <tt>@ApplicationScoped</tt> services endure for the lifetime of ORDS application, this means that:</p>
+<ul>
+
+<li>They can be accessed from multiple different threads, so they must be fully thread safe.</li>
+<li>Are instantiated and destroyed very occasionally.</li>
+<li>Can depend on other <tt>@ApplicationScoped</tt> services, but cannot depend on <tt>@RequestScoped</tt> services.</li>
+<li><tt>Lifecycle</tt> providers always have an <tt>@ApplicationScoped</tt> lifecycle.</li>
+</ul>
+<div class="section">
+<h3><a name="About_.40ApplicationScoped"></a>About @ApplicationScoped</h3>
+<p>Avoid the use of <tt>@ApplicationScoped</tt> services, only use them when it is absolutely necessary to share state across requests. Some appropriate use-cases for <tt>@ApplicationScoped</tt> services:</p>
+<ul>
+
+<li>
+
+<p>To cache data that <i>needs</i> to be shared across multiple requests. For example it might be useful to cache some expensive to compute data, and it is proven that caching the data leads to a measurable performance gain, and the benefit of this performance gain outweighs the increased costs of dealing with synchronizing access safely across threads and dealing with invalidation of stale cached data. Especially when ORDS is deployed in a clustered configuration, resulting in each ORDS node&#x2019;s cache being inconsistent with every other node&#x2019;s cache.</p>
+</li>
+<li>
+
+<p>To track global measurements, For example to calculate the total number of requests served, total number of bytes served etc.</p>
+</li>
+</ul>
+<p>Inappropriate use cases include:</p>
+<ul>
+
+<li>Caching data because you <i>think</i> it <i>might</i> be expensive to re-compute.</li>
+<li>You prefer to create one instance of the service because you <i>think</i> creating an instance per request is expensive/wasteful.</li>
+</ul>
+<p>Rather than sharing state across threads, prefer to store global state in the backend storage, i.e. the database, where it can be reliably accessed concurrently.</p></div></div>
+<div class="section">
+<h2><a name="Service_Provider_Prioritization"></a>Service Provider Prioritization</h2>
+<p>In many instances there may be multiple providers of a service. To assist in choosing the most appropriate provider, or to determine the order in which providers should be invoked, the <a href="./oracle/dbtools/plugin/api/di/annotations/Priority.html">@Priority</a> annotation is provided.</p></div>
+<div class="section">
+<h2><a name="Dependency_Injection"></a>Dependency Injection</h2>
+<p>The runtime uses the common dependency injection pattern to communicate what <i>services</i> a <i>provider</i> depends on. The runtime includes a <a class="externalLink" href="http://docs.oracle.com/javaee/6/api/javax/inject/package-summary.html">JSR-330</a> compatible dependency injection framework. A provider enumerates it&#x2019;s dependencies via it&#x2019;s constructor, which must be annotated with <a class="externalLink" href="http://docs.oracle.com/javaee/6/api/javax/inject/Inject.html">@Inject</a>:</p>
+
+<div>
+<div>
+<pre class="source">@Provides /* Advertise the Foo provider to the D.I. framework */
+class Foo {
+ @Inject Foo(Bar bar) { /* Express the dependency on the Bar service */
+  this.bar = bar;
+ }
+ 
+ public void someMethod() {
+  bar.use(); /* use the dependency */
+ }
+ private final Bar bar;
+}
+</pre></div></div>
+
+<div class="section">
+<h3><a name="Available_Dependencies"></a>Available Dependencies</h3>
+<p>The set of dependencies made available to plugins is enumerated by the <a href="./oracle/dbtools/plugin/api/di/AvailableDependencies.html">AvailableDependencies</a> type.</p></div></div>
+<div class="section">
+<h2><a name="Servlet_Extensions"></a>Servlet Extensions</h2>
+<p>If you wish to create an extension that services HTTP Requests then you must create a <tt>HttpServlet</tt> extension. The <a href="./getting-started.html">Getting Started</a> guide contains a tutorial demonstrating all the steps required to create a <tt>HttpServlet</tt> extension. The sections below provide further detail about creating servlet extensions, in particular how to use Java annotations to describe the servlet&#x2019;s metadata.</p>
+<p>Most of the metadata can be specific to a particular HTTP method, a particular URI pattern or an entire servlet. Specific metadata is defined by annotating the corresponding Java method or by setting a property of the <tt>@PathTemplate</tt> annotation.</p>
+<div class="section">
+<h3><a name="Servlet_Lifecycle"></a>Servlet Lifecycle</h3>
+<p>In contrast to the lifecycle of servlets in a regular JEE application server, servlets in ORDS <i>only</i> exist for the duration of a HTTP request. This means each servlet instance is used in a single thread, and does not have to worry about threading considerations.</p>
+<p>Each HTTP request gets it&#x2019;s own instance of a servlet. The instance is created once it has been identified as the target of the request, and the instance is destroyed once the request has been serviced.</p></div>
+<div class="section">
+<h3><a name="About_the_.40Dispatches_annotation"></a>About the @Dispatches annotation</h3>
+<p>The <a href="./oracle/dbtools/plugin/api/http/annotations/Dispatches.html"><tt>@Dispatches</tt></a> annotation informs ORDS about what URL patterns the servlet wishes to service. The <a href="./oracle/dbtools/plugin/api/http/annotations/Dispatches.html">Javadoc</a> describes in detail how to use the annotation and provides several examples. These patterns are termed <a href="./route-patterns.html">Route Patterns</a>, and have a specific <a href="./route-patterns.html">syntax</a>.</p>
+<p>Every servlet must have exactly one <tt>@Dispatches</tt> annotation.</p>
+<p>A <tt>@Dispatches</tt> annotation must have at least one <tt>@PathTemplate</tt> annotation. Each <tt>@PathTemplate</tt> annotation describes a URL pattern that the servlet is willing to service.</p></div>
+<div class="section">
+<h3><a name="About_the_.40PathTemplate_annotation"></a>About the @PathTemplate annotation</h3>
+<p>The [<tt>@PathTemplate</tt>][path-template] annotation describes a single Route Pattern that a servlet services. In addition the <tt>@PathTemplate</tt> annotation has a number of properties that can be used to provide metadata specific to the specified Route Pattern.</p></div>
+<div class="section">
+<h3><a name="About_PathTemplateMatch"></a>About PathTemplateMatch</h3>
+<p>When a servlet wishes to determine which <tt>@PathTemplate</tt> was matched, it should use the <a href="./oracle/dbtools/plugin/api/routes/PathTemplates.html"><tt>PathTemplates#matchedTemplate(HttpServletRequest)</tt></a> method to retrieve the <a href="./oracle/dbtools/plugin/api/routes/PathTemplateMatch.html"><tt>PathTemplateMatch</tt></a>:</p>
+
+<div>
+<div>
+<pre class="source">@Provides
+@Dispatches({
+ @PathTemplate(name=&quot;collection&quot;, value=&quot;/examples/collection/&quot;),
+ @PathTemplate(name=&quot;item&quot;, value=&quot;/examples/collection/:id&quot;)})
+class ExampleServlet {
+
+ protected void doGet(HttpServletRequest req,HttpServletResponse resp) {
+  PathTemplateMatch matched = this.pathTemplates.matchedTemplate(req);
+  switch(matched.name()) {
+   case &quot;collection&quot;:
+    // process collection pattern
+    break;
+   case &quot;item::
+    String id = matched.parameters().get(&quot;id&quot;);
+    // process item pattern
+    break;
+  }
+ }
+}
+</pre></div></div>
+
+<p>Once the <tt>PathTemplateMatch</tt> instance has been retrieved the servlet can branch to the correct logic for handling the request, typically by examining the <a href="./oracle/dbtools/plugin/api/routes/PathTemplateMatch.html#name"><tt>PathTemplateMatch#name()</tt></a> method.</p>
+<p>If the Route Pattern includes any parameters, the value bound to the parameter can be retrieved via the <a href="./oracle/dbtools/plugin/api/routes/PathTemplateMatch.html#parameters"><tt>PathTemplateMatch#parameters()</tt></a> method.</p></div></div>
+</body>
+</html>

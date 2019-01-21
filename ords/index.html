@@ -1,0 +1,641 @@
+<html>
+
+<head>
+<link
+	href="data:image/x-icon;base64,AAABAAEAICAQAAEABADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAOkAAAH1AAIA+wAAAP8AIiTyAERH9gBfYfgAdnr5AImM9gCio/sAurv8ANjZ/QDn6f8A8vH/APv9/wAAAAAA///////////////////////////////yP/////////////////8zMQEz//////////////8yIREAADP///////////8yIRERAAAAI/////////8zIRF67u2nAAAT////////MSFO7u3u7uQAA////////zETnu2pmu7YAAP///////8xMqh5zuuYiAAD////////MRFe7u3u7uUAAP//////8zExne6pqu7YQAE///////MRE6h5vtuYiAAAP//////zMzJe7u3u3uUAAD//////8xETre6qm+7YAAA///////MREah5vMuImAAAP//////zEzNe7u7u7sUAAD//////8RMRne7e7u7oAAA///////MxIRnu7t7ugAAAD/////8zESERFGd2QAAAAAP/////MTERIbMXUEoAAAAD/////zEhMU3lCmB9xAAAA/////8xEhIeWDuAl7AAAAP/////MRMxxBMbgABrAAAD/////zEUZxERHZAAAIZAAf////8hExERFs7eQAAAAAH////zMzERMxKu5wAAAAABP///8yERIxERHsAAAAAAAT////MzIREyIxYAAAAAABE/////8zMzIRERAAAAETM/////////8zMzIgASMz//////////////8zMzP/////////////////////////////////////5////wD///wAP//wAA//wAAD/8AAA//AAAP/wAAD/8AAA/+AAAH/gAAB/4AAAf+AAAH/gAAB/4AAAf+AAAH/gAAB/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP4AAAB+AAAAfgAAAH+AAAH/+AAf//+B///////w=="
+	rel="icon" type="image/x-icon" />
+<title>Oracle REST Data Services (18.1.1.95.1251) Release
+	Notes</title>
+<style type="text/css" media="screen">
+html {
+	font-family: sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%
+}
+
+body {
+	margin: 0
+}
+
+header {
+	display: block
+}
+
+a {
+	background: 0 0
+}
+
+a:active, a:hover {
+	outline: 0
+}
+
+img {
+	border: 0
+}
+
+pre {
+	overflow: auto
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+	padding: 0;
+	border: 0
+}
+
+@media print {
+	* {
+		color: #000 !important;
+		text-shadow: none !important;
+		background: 0 0 !important;
+		-webkit-box-shadow: none !important;
+		box-shadow: none !important
+	}
+	a, a:visited {
+		text-decoration: underline
+	}
+	a[href]:after {
+		content: " (" attr(href) ")"
+	}
+	pre {
+		border: 1px solid #999;
+		page-break-inside: avoid
+	}
+	img {
+		page-break-inside: avoid;
+		max-width: 100% !important
+	}
+	h2, p {
+		orphans: 3;
+		widows: 3
+	}
+	h2 {
+		page-break-after: avoid
+	}
+	.navbar {
+		display: none
+	}
+}
+
+@font-face {
+	font-family: 'Glyphicons Halflings';
+	src: url(../fonts/glyphicons-halflings-regular.eot);
+	src: url(../fonts/glyphicons-halflings-regular.eot?#iefix)
+		format('embedded-opentype'),
+		url(../fonts/glyphicons-halflings-regular.woff) format('woff'),
+		url(../fonts/glyphicons-halflings-regular.ttf) format('truetype'),
+		url(../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular)
+		format('svg')
+}
+
+*, :after, :before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box
+}
+
+html {
+	font-size: 10px;
+	-webkit-tap-highlight-color: transparent
+}
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	line-height: 1.42857143;
+	color: #333;
+	background-color: #fff
+}
+
+a {
+	color: #428bca;
+	text-decoration: none
+}
+
+a:focus, a:hover {
+	color: #2a6496;
+	text-decoration: underline
+}
+
+a:focus {
+	outline: dotted thin;
+	outline: -webkit-focus-ring-color auto 5px;
+	outline-offset: -2px
+}
+
+img {
+	vertical-align: middle
+}
+
+h2 {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit
+}
+
+h2 small {
+	font-weight: 400;
+	line-height: 1;
+	color: #777
+}
+
+h2 {
+	margin-top: 17px;
+	margin-bottom: 8.5px
+}
+
+h2 small {
+	font-size: 65%
+}
+
+h2 {
+	font-size: 25px
+}
+
+p {
+	margin: 0 0 8.5px
+}
+
+small {
+	font-size: 91%
+}
+
+ul {
+	margin-top: 0;
+	margin-bottom: 8.5px
+}
+
+pre {
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	display: block;
+	padding: 8px;
+	margin: 0 0 8.5px;
+	font-size: 11px;
+	line-height: 1.42857143;
+	color: #333;
+	word-break: break-all;
+	word-wrap: break-word;
+	background-color: #f5f5f5;
+	border: 1px solid #ccc;
+	border-radius: 4px
+}
+
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto
+}
+
+@media ( min-width :768px) {
+	.container {
+		width: 750px
+	}
+}
+
+@media ( min-width :992px) {
+	.container {
+		width: 970px
+	}
+}
+
+@media ( min-width :1200px) {
+	.container {
+		width: 1170px
+	}
+}
+
+.form-control::-moz-placeholder {
+	color: #777;
+	opacity: 1
+}
+
+.form-control:-ms-input-placeholder {
+	color: #777
+}
+
+.navbar {
+	position: relative;
+	min-height: 50px;
+	margin-bottom: 17px;
+	border: 1px solid transparent
+}
+
+@media ( min-width :768px) {
+	.navbar {
+		border-radius: 4px
+	}
+}
+
+@media ( min-width :768px) {
+	.navbar-header {
+		float: left
+	}
+}
+
+.container>.navbar-header {
+	margin-right: -15px;
+	margin-left: -15px
+}
+
+@media ( min-width :768px) {
+	.container>.navbar-header {
+		margin-right: 0;
+		margin-left: 0
+	}
+}
+
+.navbar-static-top {
+	z-index: 1000;
+	border-width: 0 0 1px
+}
+
+@media ( min-width :768px) {
+	.navbar-static-top {
+		border-radius: 0
+	}
+}
+
+.navbar-brand {
+	float: left;
+	height: 50px;
+	padding: 16.5px 15px;
+	font-size: 15px;
+	line-height: 17px
+}
+
+.navbar-brand:focus, .navbar-brand:hover {
+	text-decoration: none
+}
+
+@media ( min-width :768px) {
+	.navbar>.container .navbar-brand {
+		margin-left: -15px
+	}
+}
+
+.navbar-default {
+	background-color: #f0f0f0;
+	border-color: #dfdfdf
+}
+
+.navbar-default .navbar-brand {
+	color: #707070
+}
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover
+	{
+	color: #222;
+	background-color: transparent
+}
+
+.alert {
+	padding: 15px;
+	margin-bottom: 17px;
+	border: 1px solid transparent;
+	border-radius: 4px
+}
+
+.alert-danger {
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1
+}
+
+.container:after, .container:before, .navbar-header:after,
+	.navbar-header:before, .navbar:after, .navbar:before {
+	display: table;
+	content: " "
+}
+
+.container:after, .navbar-header:after, .navbar:after {
+	clear: both
+}
+
+@
+-ms-viewport {
+	width: device-width
+}
+</style>
+</head>
+
+<body>
+
+	<header class="navbar navbar-default navbar-static-top" id="top"
+		role="banner">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" style="padding: 5.5px 15px;"
+					href="http://www.oracle.com/technetwork/developer-tools/rest-data-services/overview/index.html"
+					target="_blank"> <img style="height: 40px; margin-right: 5px;"
+					src="data:image/png;base64,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" />ORACLE
+					REST DATA SERVICES
+				</a>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		<header>
+			<h1>Oracle REST Data Services 18.1.1.95.1251</h1>
+			<h2>Release Notes</h2>
+			<p>
+				<strong>Date: April 2018</strong>
+			</p>
+		</header>
+		<h3>
+			<a
+				href="http://www.oracle.com/technetwork/developer-tools/rest-data-services/overview/index.html"
+				target="_blank">Oracle REST Data Services on OTN</a> | <a
+				href="http://www.oracle.com/technetwork/developer-tools/rest-data-services/downloads/index.html"
+				target="_blank">Downloads</a> | <a
+				href="https://community.oracle.com/community/database/developer-tools/oracle_rest_data_services"
+				target="_blank">Forum</a>
+		</h3>
+		<a id="support"></a>
+		<h2>Support</h2>
+		<ul>
+			<li>You are supported by Oracle Support under your current
+				Oracle Database Support license for Oracle REST Data Services <em>production
+					releases</em>.
+			</li>
+			<li>
+				<p>
+					Log Oracle REST Data Services bugs and issues using <a
+						href="http://support.oracle.com">My Oracle Support</a>.
+				</p>
+				<ul>
+					<li>For problems specific to SODA for REST, file a service
+						request using <em>"Oracle XML Developers Kit"</em> as the product.
+					</li>
+					<li>For <em>all</em> other problems, use <em>"Oracle REST
+							Data Services"</em> as the product.
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<a id="Documentation"></a>
+		<h2>Documentation</h2>
+		<ul>
+			<li>Documentation for this release is provided on the OTN web
+				site. Click <a
+				href="http://www.oracle.com/technetwork/developer-tools/rest-data-services/documentation/index.html">here</a>
+				to view the documentation.
+			</li>
+			<li>Documentation on using SODA for REST is provided on OTN <a
+				href="http://www.oracle.com/technetwork/developer-tools/rest-data-services/documentation/index.html">here</a>.
+			</li>
+		</ul>
+		<h3>Getting Started</h3>
+		<ul>
+			<li>A tutorial on getting started with developing RESTful
+				Services is included in the <a
+				href="http://www.oracle.com/technetwork/developer-tools/rest-data-services/documentation/index.html">product
+					documentation</a>, in the book titled 'Oracle® REST Data Services Quick
+				Start Guide'.
+			</li>
+		</ul>
+		<a id="feedback"></a>
+		<h2>Feedback</h2>
+		<ul>
+			<li>You can discuss issues on the <a
+				href="https://community.oracle.com/community/database/developer-tools/oracle_rest_data_services">forums.</a>
+				<ul>
+					<li>Be sure to use clear subject lines to initiate a thread.
+						Provide a complete and clear description of the issue, including
+						steps to reproduce the issue.</li>
+					<li>Try to avoid using old, unrelated threads for a new issue.</li>
+				</ul>
+			</li>
+		</ul>
+		<h2>Important Changes to Note</h2>
+		<h3>HTTP Basic dynamic authentication for PL/SQL Gateway requests</h3>
+		<p>To facilitate customers migrating from Oracle mod_plsql to
+			Oracle REST Data Services, this release introduces support for
+			authentication of database users using HTTP Basic Authentication.
+			This functionality is equivalent to the Basic authentication mode in
+			mod_plsql where the database user name and password are omitted from
+			the mod_plsql DAD.</p>
+		<p>
+			<em>For performance and security reasons we strongly advise
+				customers not to use database authentication in general</em>. The only
+			way to validate a database password is by creating a connection to
+			the database, which is very expensive. Database passwords are often
+			weak and poorly chosen on the assumption that they are not accessible
+			from the web. The HTTP Basic Authentication scheme lacks a mechanism
+			for terminating (logging out) a user session. The only way to end the
+			session is to close the Browser window/tab.
+		</p>
+		<p>The only scenario where using database authentication is
+			acceptable is for migrating existing applications from mod_plsql that
+			are reliant on database authentication, and the database is
+			appropriately configured with a strong password strength and
+			expiration policy.</p>
+		<p>
+			You can learn more about this feature in the tutorial located <a
+				href="./examples/db_auth/index.html">here</a>.
+		</p>
+		<h3>Changes to Installation in CDB$ROOT</h3>
+		<p>
+			As of release 18.1.1, ORDS no longer installs it's
+			<code>ORDS_METADATA</code>
+			schema into the CDB$ROOT container. Now only the
+			<code>ORDS_PUBLIC_USER</code>
+			common user is installed in the CDB$ROOT (and ALL PDBs connected to
+			the CDB). The
+			<code>ORDS_METADATA</code>
+			schema is installed in each PDB connected to the CDB. This aids
+			future upgrades of ORDS, minimizing downtime as the CDB and PDBs will
+			no longer need to be all taken offline for an ORDS upgrade.
+		</p>
+		<p>
+		The installation changes are supported for Oracle database 12.1.0.2 and later in this release.
+		</p>
+		<h2>Removal of Oracle NoSQL Support</h2>
+		<p>Support for Oracle NoSQL Database has been removed in this
+			release.</p>
+		<h3>Change in Product Versioning Scheme</h3>
+		<p>
+			Oracle REST Data Services is aligning with the release numbering
+			scheme used for <a href="https://cloud.oracle.com/en_US/database">Oracle
+				Cloud Services</a>. Going forward, releases will be numbered by
+			<code>Year.Quarter.PointVersion</code>
+			. Expect a new release each quarter.
+		</p>
+		<h3>Supported Java Version</h3>
+		<p>
+			Oracle REST Data Services requires Java 8 or later. Java 7 is no
+			longer supported. Java 9 support has been enhanced in 18.1.1 by
+			eliminating the need for the additional
+			<code>--add-module java.xml.bind</code>
+			command line argument, see the <a href="#known-issues">known
+				issues section below for more detail</a>. Please consult the
+			documentation for the minimum supported Application Server versions
+			for ORDS.
+		</p>
+		<h3>REST Enabled SQL</h3>
+		<p>It is now possible to POST SQL and JSON payloads to ORDS
+			(restricted to appropriately authorized users), these scripts are
+			parsed and executed by the same engine that powers Oracle SQL
+			Developer and Oracle SQLcl, and the output is returned in a rich JSON
+			document</p>
+		<p>
+			<strong>Note:</strong> Enabling the REST Enabled SQL service enables
+			authentication against ORDS enabled database schemas. This makes the
+			database schemas accessible over HTTPS using the database password.
+			Oracle <em>strongly recommends</em> that you use unguessable secure
+			database passwords.
+		<h3>Open API 2.0 Support</h3>
+		<p>
+			In ORDS 3.0.x a propietary format was used to describe Resource
+			Module and AutoREST enabled resources. In 17.4 and later this format
+			has been superceded by resources using the <a
+				href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md">Open
+				API 2.0</a> (aka Swagger) syntax.
+		</p>
+		<h3>Deprecation of Glassfish Support</h3>
+		<p>While 18.1.1 continues to support Glassfish (4.1.2 and later),
+			support for Glassfish will be removed in a future release. Use of
+			Oracle WebLogic , ORDS Standalone Mode or Apache Tomcat is
+			recommended instead.</p>
+
+		<h2>Changes in 18.1.1</h2>
+		The following changes and enhancements have been made since 18.1.0:
+		<h3>Issues Fixed in 18.1.1</h3>
+
+		<a id="18.1.1-changes"></a>
+		<ul>
+			<li>BUG:27165873 - Fix issue with ORDS.DELETE_CLIENT failing</li>
+			<li>BUG:27540028 - Migrate CDB install to PDB install</li>
+			<li>BUG:27505895 - Multithreading issue when dispatching
+				resource modules under load</li>
+			<li>BUG:27456593 - Issue with first part token session not
+				expiring correctly</li>
+			<li>BUG:27391040 - APEX OAuth Clients are forced to Token
+				Response type when edited and saved</li>
+			<li>BUG:26881221 - Fix regression preventing authentication of Tomcat based users</li>				
+		</ul>
+		<h3>New Features in 18.1.1</h3>
+		<ul>
+			<li>ENH:27741103 - Support HTTP Basic dynamic authentication for
+				PL/SQL Gateway calls</li>
+		</ul>
+
+
+		<h2>Changes in 18.1.0</h2>
+		The following changes and enhancements have been made since 17.4.1:
+		<h3>Issues Fixed in 18.1.0</h3>
+
+		<a id="18.1.0-changes"></a>
+		<ul>
+			<li>BUG:27375052 - Eliminate need for --add-modules
+				javax.xml.bind when running ORDS on JDK 9</li>
+			<li>BUG:27374997 - Fix regression causing ORDS not to function
+				on WebLogic 12C out of the box</li>
+		</ul>
+		<h3>New Features in 18.1.0</h3>
+		<p>None</p>
+
+		<h2>Changes in 17.4.1</h2>
+		The following changes and enhancements have been made since 17.4.0:
+		<h3>Issues Fixed in 17.4.1</h3>
+
+		<a id="17.4.1-changes"></a>
+		<ul>
+			<li>BUG:27282496 - Fix regression causing error during install:
+				ERROR DURING COMPILATION: PACKAGE ORDS_MIGRATE ORA-24344</li>
+		</ul>
+		<h3>New Features in 17.4.1</h3>
+		<p>None</p>
+
+		<h2>Changes in 17.4.0</h2>
+		The following changes and enhancements have been made since 3.0.11:
+		<h3>Issues Fixed in 17.4.0</h3>
+
+		<a id="17.4.0-changes"></a>
+		<ul>
+			<li>BUG:27153303 - Change installer to prompt for SYS user
+				password, instead of misleading prompt for any SYSDBA user, which
+				only works on 11.2 or earlier</li>
+			<li>BUG:27122800 - Rework OAuth UI to use Oracle JET</li>
+			<li>BUG:26992910 - Include APEX REST Services migration logic in
+				schema install</li>
+			<li>BUG:26839669 - Address handling of CLOB strings in REST
+				Enabled SQL</li>
+			<li>BUG:26830673 - Ensure error message is displayed on startup
+				if a pool is misconfigured</li>
+			<li>BUG:26800638 - Fix regression introduced in 17.3 Beta that
+				prevented PDF functionality in APEX working</li>
+			<li>BUG:26790372 - Fix issue with result values in REST Enabled
+				SQL</li>
+			<li>BUG:26731570 - Upgrade to Apache XML Graphics 2.2</li>
+			<li>BUG:26731475 - Upgrade to Apache FOP 2.2</li>
+			<li>BUG:26718269 - Address ORA-01000: Maximum Open Cursors
+				Exceeded when using Application Express 4.2</li>
+			<li>BUG:26720712 - Fix regression introduced in 17.3 Beta that
+				caused a stacktrace to be displayed when shutting down ORDS in
+				standalone mode</li>
+			<li>BUG:26735250 - Fix regression introduced in 17.3 Beta that
+				caused some describes links in metadata-catalog to give 404 Not
+				Found status</li>
+			<li>BUG:26735352 - Fix regression introduced in 17.3 Beta that
+				caused describedby links in resources to give 404 Not Found status</li>
+			<li>BUG:26723675 - Fix regression introduced in 17.3 Beta that
+				caused an empty document to be produced for describedby link of
+				AutoREST enabled table/view items</li>
+		</ul>
+		<h3>New Features in 17.4.0</h3>
+		<ul>
+			<li>ENH:26718429 - REST Enabled SQL Service. Provides a secure
+				mechanism to POST SQL scripts to be executed in the context of an
+				ORDS enabled database schema</li>
+			<li>ENH:26718645 - Open API (aka Swagger) support for metadata
+				catalog.</li>
+		</ul>
+		<a id="known-issues"></a>
+		<h2>Known Issues</h2>
+		<h3>NoSQL Database Support</h3>
+		<p>Support for Oracle NoSQL Database has been removed in this
+			release.</p>
+		<h3>SODA</h3>
+		<ul>
+			<li>None</li>
+		</ul>
+		<h3>JDK Support</h3>
+		<ul>
+			<li>ORDS will run and is supported on JDK 9 however the only
+				supported way to use ORDS on JDK 9 is by running it in standalone
+				mode, as currently neither Oracle <a
+				href="https://blogs.oracle.com/weblogicserver/weblogic-server-and-java-se-9">WebLogic</a>
+				or <a
+				href="https://javaee.github.io/glassfish/doc/5.0/release-notes.pdf">Glassfish</a>
+				are certified for use with JDK 9, and ORDS has not yet been
+				certified on Apache Tomcat on JDK 9.
+			</li>
+			<li>
+				<p>From ORDS 18.1.0 and later you can launch ORDS on JDK 9 by
+					just typing:</p> <pre>java -jar ords.war &lt;command-name&gt;</pre>
+				<ul>
+					<li>The requirement in 17.4 to use the <code>--add-modules
+							java.xml.bind</code> command line argument has been eliminated
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<h3>Autogenerated REST Endpoints</h3>
+		<ul>
+			<li>AutoRest resources support the OAuth 2.0 Client Credentials
+				flow only.</li>
+		</ul>
+
+		<h3>RESTful Services</h3>
+		<ul>
+			<li>Application Express workspaces do not support first party
+				authentication, and therefore do not support the <code>/sign-in/</code>
+				interactive sign in form. Accessing <code>/sign-in/</code> in APEX
+				workspaces will produce a 404 status.
+			</li>
+		</ul>
+	</div>
+</body>
+
+</html>

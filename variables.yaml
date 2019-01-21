@@ -1,0 +1,18 @@
+name: ords
+version: 18.1.1
+
+TEST:
+    DB_HOSTNAME: viiperdb-test.apps.elex.be
+    DB_SID: VIPRTEST
+    ADDITIONAL_DBS: viipernextdb-test.apps.elex.be:VIPRNEXT,viipermipsdb-p-test.apps.elex.be:VIPRPRET,viipermipsdb-test.apps.elex.be:VIPRMIPS,iprocdb-test.apps.elex.be:VIPRMX,viiperpatchdb-test.apps.elex.be:VIPRPTCH,viiperfindb-test.apps.elex.be:VIPRFIN,viiperintdb-test.apps.elex.be:VIPRINT,viipersfmdb-test.apps.elex.be:VIPRSFM,viipercostdb-test.apps.elex.be:VIPRCOST,ortmelei.apps.elex.be:VIPRUPGR
+
+UAT:
+    DB_HOSTNAME: viiperdb-uat.apps.elex.be
+    DB_SID: VIPRUAT
+    ADDITIONAL_DBS: skip
+
+STABLE:
+    DB_HOSTNAME: viiperdb.apps.elex.be
+    DB_SID: VIPR
+    ADDITIONAL_DBS: skip
+

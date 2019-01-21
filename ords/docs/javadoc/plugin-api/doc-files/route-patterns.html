@@ -1,0 +1,743 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Oracle REST Data Services Java API Reference &#x2013; Route Patterns</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: 'Helvetica Neue', 'Neue Helvetica', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  white-space: pre-wrap; 
+  white-space: -moz-pre-wrap;
+  word-wrap: break-word;
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+#banner {
+	display: none;
+}
+
+#leftColumn {
+	display: none;
+}
+
+#breadcrumbs {
+	display: none;
+}
+
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+</head>
+<body>
+<h1>Route Patterns</h1>
+<p>A Route Pattern describes a pattern that will match a certain set of HTTP request paths. The pattern is matched against the path component of the request URI.</p>
+<div class="section">
+<h2><a name="Example"></a>Example</h2>
+
+<div>
+<div>
+<pre class="source">/objects/:object/:id?
+</pre></div></div>
+
+<p>This route pattern will match the following paths:</p>
+<ul>
+
+<li><tt>/objects/emp/101</tt> - Matches a request for the item in the <tt>emp</tt> resource with id of <tt>101</tt>.</li>
+<li><tt>/objects/emp/</tt> - Matches a request for the <tt>emp</tt> resource, because the <tt>:id</tt> parameter is annotated with the <tt>?</tt> modifier which indicates that the <tt>id</tt> parameter is optional.</li>
+</ul></div>
+<div class="section">
+<h2><a name="Origins"></a>Origins</h2>
+<p><b>This section is non normative</b></p>
+<p>The syntax of Route Patterns is similar to and inspired by the pattern routing syntax found in a number of web frameworks, including:</p>
+<ul>
+
+<li><a class="externalLink" href="https://docs.angularjs.org/api/ngRoute/provider/$routeProvider">Angular Routes</a></li>
+<li><a class="externalLink" href="http://api.rubyonrails.org/classes/ActionDispatch/Routing.html">Ruby on Rails Routing</a></li>
+</ul>
+<p>Route Patterns emerge out of a desire to create a formal definition of the ad-hoc pattern syntax that these and similar frameworks have popularised.</p>
+<p>A goal of Route Patterns is to ensure that it is not possible to define a suite of Route Patterns that are ambiguous, i.e that for any given request path only one or zero Route Patterns can be chosen to match against the path. As a consequence the Route Pattern syntax may be considered less flexible/expressive than the ad-hoc syntaxes that the above web frameworks define.</p>
+<p>This is a conscious design trade-off. In the ad-hoc syntaxes, any ambiguity is resolved by the order in which patterns are declared, the first declared pattern is tested first, the second declared pattern tested second and so on. Developers can order the pattern declarations to ensure more specific patterns are tested before less specific patterns. This requires one central code location where routes are declared and requires careful ordering of the patterns to avoid errors. These requirements may not scale to larger applications where many developers are defining route patterns, and may not be fully aware of conflicting/overlapping route patterns, or to applications where route patterns need to be defined in many different locations (e.g. in a pluggable architecture).</p>
+<p>The Route Pattern syntax is also somewhat similar to the <a class="externalLink" href="https://tools.ietf.org/html/rfc6570">URI Template</a> syntax, but the applications of URI Templates and Route Patterns differ. URI Templates focus on forming concrete URIs from a template, Route Patterns focus on decomposing the path portion of a URI into it&#x2019;s component parts.</p></div>
+<div class="section">
+<h2><a name="Pattern_Syntax_Rules"></a>Pattern Syntax Rules</h2>
+<p>A Route Pattern is a string of printable Unicode characters that contains zero or more embedded variable expressions. An expression MAY be a Named Parameter, delimited by a leading colon (&#x2018;<tt>:</tt>&#x2019;) and a trailing slash (&#x2018;<tt>/</tt>&#x2019;), or end of string, or an expression MAY be a Glob Parameter indicated by the wildcard character (&#x2018;<tt>*</tt>&#x2019;). A pattern that contains one or more Named Parameters is termed a Named Pattern. A pattern that contains a Glob Parameter is termed a Glob Pattern. A pattern MUST NOT contain a mixture of Named Patterns and Glob Expressions. A pattern lacking any variable expressions is termed a Literal Pattern.</p>
+
+<div>
+<div>
+<pre class="source">Route-Pattern = named-pattern / glob-pattern / literal-pattern
+</pre></div></div>
+
+<p><a name="path-separator"></a></p>
+<div class="section">
+<h3><a name="Path_Separator"></a>Path Separator</h3>
+<p>The slash (&#x2018;<tt>/</tt>&#x2019;) character delimits the pattern into Path Segments. A Path Separator MUST NOT be followed by another Path Separator. The leading Path Separator in a Route Pattern is implied and may be omitted.</p>
+<div class="section">
+<h4><a name="Examples"></a>Examples</h4>
+<ul>
+
+<li>The patterns <tt>a/b</tt> and <tt>/a/b</tt> are equivalent</li>
+<li>The patterns <tt>*</tt> and <tt>/*</tt> are equivalent</li>
+<li>The patterns <tt>a/b</tt> and <tt>a/b/</tt> are not equivalent, the trailing Path Separator is significant and cannot be ignored.</li>
+</ul>
+<p><a name="reserved-characters"></a></p></div></div>
+<div class="section">
+<h3><a name="Reserved_Characters"></a>Reserved Characters</h3>
+<p>The set of reserved characters is those defined by <a class="externalLink" href="https://tools.ietf.org/html/rfc3986#section-2.2">RFC 3986 Section 2.2</a>.</p>
+
+<div>
+<div>
+<pre class="source">  reserved    = gen-delims / sub-delims
+
+  gen-delims  = &quot;:&quot; / &quot;/&quot; / &quot;?&quot; / &quot;#&quot; / &quot;[&quot; / &quot;]&quot; / &quot;@&quot;
+
+  sub-delims  = &quot;!&quot; / &quot;$&quot; / &quot;&amp;&quot; / &quot;'&quot; / &quot;(&quot; / &quot;)&quot;
+              / &quot;*&quot; / &quot;+&quot; / &quot;,&quot; / &quot;;&quot; / &quot;=&quot;
+</pre></div></div>
+
+<p><a name="literal-value"></a></p></div>
+<div class="section">
+<h3><a name="Literal_Values"></a>Literal Values</h3>
+<p>The characters outside of expressions and path separators in a Route Pattern are termed Literal Values. They MAY contain any printable Unicode character except the Reserved Characters.</p>
+<p><a name="named-parameter"></a></p></div>
+<div class="section">
+<h3><a name="Named_Parameters"></a>Named Parameters</h3>
+<p>The start of a Named Parameter is indicated by the colon character (&#x2018;<tt>:</tt>&#x2019;). The end of a Named Parameter is indicated by a Path Separator or the end of string. The Named Pattern MAY be suffixed with a Modifier. A given parameter name MUST only appear once in each route pattern. A Route Pattern MAY have zero or more Named Patterns.</p>
+
+<div>
+<div>
+<pre class="source">named-expression-pattern = *(literal / path-separator / named-expression )
+
+valid-name = [a-zA-Z0-9] / '-' / '_' / '.'
+char = [a-zA-Z]
+name = char valid-name*
+param-decl = name ('*' / '?' )
+
+named-expression = ':' param-decl path-separator /
+                   ':' param-decl &lt;eos&gt;
+</pre></div></div>
+
+<div class="section">
+<h4><a name="Modifiers"></a>Modifiers</h4>
+<p>A Modifier modifies the matching behavior of a Named Parameter. Only a single Named Parameter in a Route Pattern MAY contain a Modifier and it MUST be the last Named Parameter in the pattern. A Modifier is suffixed to the end of a named parameter expression.</p>
+<div class="section">
+<h5><a name="Eager_Modifier"></a>Eager Modifier</h5>
+<p>The Eager Modifier is indicated by the asterisk character (&#x2018;<tt>*</tt>&#x2019;) and instructs the matcher to eagerly consume all characters matching the Named Pattern including the Path Separator character up to the end of the string.</p>
+<div class="section">
+<h6><a name="Example"></a>Example</h6>
+
+<div>
+<div>
+<pre class="source">/foo/:all-children*
+</pre></div></div>
+
+<p>This pattern will match the following paths:</p>
+<ul>
+
+<li><tt>/foo/bar</tt> &#x2013; <tt>all-children</tt> is bound to <tt>bar</tt></li>
+<li><tt>/foo/bar/</tt> &#x2013; <tt>all-children</tt> is bound to <tt>bar/</tt>, the Eager Modifier consumes all characters including the Path Separator</li>
+<li><tt>/foo/bar/baz</tt> &#x2013; <tt>all-children</tt> is bound to <tt>bar/baz</tt>, the Eager Modifier consumes all characters to the end of the string</li>
+</ul>
+<p>The Eager Modifier MUST match at least one character, so the above pattern will not match the following path:</p>
+<ul>
+
+<li><tt>/foo/</tt>, matching this path would require <tt>all-children</tt> to be bound to the empty string, which is not permitted.</li>
+</ul></div></div>
+<div class="section">
+<h5><a name="Optional_Modifier"></a>Optional Modifier</h5>
+<p>The Optional Modifier is indicated by the question mark character (&#x2018;<tt>?</tt>&#x2019;) and instructs the matcher that the Named Pattern will match zero or more characters until the end of string is reached.</p>
+<div class="section">
+<h6><a name="Example"></a>Example</h6>
+
+<div>
+<div>
+<pre class="source">/foo/:item?
+</pre></div></div>
+
+<p>This pattern will match the following paths:</p>
+<ul>
+
+<li><tt>/foo/bar</tt> &#x2013; <tt>item</tt> is bound to <tt>bar</tt></li>
+<li><tt>/foo/</tt> &#x2013; <tt>item</tt> is bound to the empty string, the Optional Modifier causes the Named Parameter to match the zero length string.</li>
+</ul>
+<p><a name="compound-named-parameter"></a></p></div></div>
+<div class="section">
+<h5><a name="Compound_Named_Parameter"></a>Compound Named Parameter</h5>
+<p>A Compound Named Parameter is a Named Parameter where the matching text in the request path is decomposed into named components. Each component is delimited by the comma character (&#x2018;<tt>,</tt>&#x2019;).</p>
+<p>A Compound Named Parameter MAY have an Optional Modifier, but MUST NOT have an Eager Modifier.</p>
+<div class="section">
+<h6><a name="Example"></a>Example</h6>
+
+<div>
+<div>
+<pre class="source">/line-items/:order_id,item_id/detail
+</pre></div></div>
+
+<p><a name="glob-parameter"></a></p></div></div></div>
+<div class="section">
+<h4><a name="Glob_Parameter"></a>Glob Parameter</h4>
+<p>A Glob Parameter is denoted by the wildcard Modifier (the &#x2018;<tt>*</tt>&#x2019; character). The wildcard Modifier MUST appear at the end of the pattern and MUST be preceded by the path separator. Only a single Glob Parameter is permitted in a pattern. A Glob Parameter MUST NOT occur in the same pattern as a Named Parameter.</p>
+
+<div>
+<div>
+<pre class="source">glob-pattern = *(literal / path-separator /  ) / path-separator '*'
+</pre></div></div>
+
+<p>A Glob Parameter matches zero or more characters until the end of the string.</p>
+<div class="section">
+<h5><a name="Examples"></a>Examples</h5>
+<ul>
+
+<li><tt>/*</tt> &#x2013; Matches all paths</li>
+<li><tt>/foo/*</tt> &#x2013; Matches all paths starting with <tt>/foo/</tt> including the <tt>/foo/</tt> path.</li>
+</ul></div></div></div></div>
+<div class="section">
+<h2><a name="Pattern_Matching_Rules"></a>Pattern Matching Rules</h2>
+<p>A Route Pattern is composed of the following tokens:</p>
+<ul>
+
+<li><a href="#path-separator">Path Separator</a></li>
+<li><a href="#literal-value">Literal Value</a></li>
+<li><a href="#named-parameter">Named Parameter</a></li>
+<li><a href="#compound-named-parameter">Named Compound Parameter</a></li>
+<li><a href="#glob-parameter">Glob Parameter</a></li>
+</ul>
+<p>A Route Pattern is matched against the URL encoded form of a request path, by matching each token against it&#x2019;s corresponding segment of the request path. The tokens are matched in left to right order, the first token matching the left-most segment of the request path, the second token matching the next left most segment and so on.</p>
+<p>The rules for matching each token type are defined below:</p>
+<div class="section">
+<h3><a name="Path_Separator_Matching"></a>Path Separator Matching</h3>
+<p>Each path separator token MUST match exactly one &#x2018;<tt>/</tt>&#x2019; character in the request path. A Path Separator MUST NOT match the URL Encoded form of the &#x2018;<tt>/</tt>&#x2019; character, i.e. it MUST NOT match the following octets: <tt>%2F</tt> or the following octets: <tt>%2f</tt>. Since the leading Path Separator in a Route Pattern is optional, the leading Path Separator in a request path is also optional and MAY be omitted.</p>
+<div class="section">
+<h4><a name="Examples"></a>Examples</h4>
+<ul>
+
+<li>The pattern <tt>/a/b</tt> will match the request paths: <tt>a/b</tt> and <tt>/a/b</tt></li>
+<li>The equivalent pattern <tt>a/b</tt> will also match <tt>a/b</tt> and <tt>/a/b</tt></li>
+<li>The pattern <tt>/a/b</tt> will not match the request paths: <tt>a%2Fb</tt> or <tt>%2fa%2Fb</tt></li>
+</ul></div></div>
+<div class="section">
+<h3><a name="Literal_Value_Matching"></a>Literal Value Matching</h3>
+<p>Each literal value token MUST match the exact same characters in the request path. Each literal value MUST be URL encoded and compared to the URL encoded request path.</p>
+<div class="section">
+<h4><a name="Examples"></a>Examples</h4>
+<p>The pattern <tt>a/b</tt> will match the following request paths:</p>
+<ul>
+
+<li><tt>a/b</tt></li>
+<li><tt>/a/b</tt></li>
+<li><tt>/%61/%62</tt> &#x2013; &#x2018;<tt>%61</tt>&#x2019; is the percent encoded form of the &#x2018;<tt>a</tt>&#x2019; character, &#x2018;<tt>%62</tt>&#x2019; is the percent encoded form of the &#x2018;<tt>b</tt>&#x2019; character.</li>
+</ul></div></div>
+<div class="section">
+<h3><a name="Named_Parameter_Matching"></a>Named Parameter Matching</h3>
+<p>A Named Parameter token matches one or more characters up until the next occurrence of a Path Separator or end of string.</p>
+<div class="section">
+<h4><a name="Optional_Modifier_Matching"></a>Optional Modifier Matching</h4>
+<p>If a Named Parameter has an Optional Modifier then it will match zero or more characters up until the end of string.</p></div>
+<div class="section">
+<h4><a name="Eager_Modifier_Matching"></a>Eager Modifier Matching</h4>
+<p>If a Named Parameter has an Eager Modifier then it will match all characters until the end of the string.</p></div>
+<div class="section">
+<h4><a name="Examples"></a>Examples</h4>
+<p>The pattern <tt>/test/:item</tt> will match the following paths:</p>
+<ul>
+
+<li><tt>test/101</tt></li>
+<li><tt>/test/true%2Ffalse</tt></li>
+<li><tt>/test/a,b,c</tt></li>
+</ul>
+<p>The pattern will not match the following paths:</p>
+<ul>
+
+<li><tt>/test/101/</tt> &#x2013; extra trailing slash</li>
+<li><tt>/test/</tt> &#x2013; named parameter must match at least one character</li>
+</ul></div></div>
+<div class="section">
+<h3><a name="Compound_Named_Parameter_Matching"></a>Compound Named Parameter Matching</h3>
+<p>A Compound Named Parameter token matches one or more characters up until the next occurrence of a Path Separator or end of string, wherein the matched characters are further delimited by the comma (&#x2018;<tt>,</tt>&#x2019;) character. If the Compound Named Parameters has <tt>N</tt> components, then there MUST be at most <tt>N-1</tt> commas in the matched text. If there are more than <tt>N-1</tt> comma characters then there MUST be no match. Trailing comma characters MAY be omitted in the matched request path.</p>
+<p>Component values in the request path that must contain the comma character MUST use the percent encoded form of the comma character (&#x2018;<tt>%2C</tt>&#x2019;)</p>
+<div class="section">
+<h4><a name="Optional_Modifier_Matching"></a>Optional Modifier Matching</h4>
+<p>If a Compound Named Parameter has an Optional Modifier then it will match zero or more characters up until the end of string.</p></div>
+<div class="section">
+<h4><a name="Examples"></a>Examples</h4>
+<p>The pattern <tt>/line-items/:order_id,item_id/detail</tt> will match the following paths:</p>
+<ul>
+
+<li><tt>/line-items/101,493/detail</tt> &#x2013; <tt>order_id</tt> is bound to <tt>101</tt>, <tt>item_id</tt> is bound to <tt>493</tt></li>
+<li><tt>/line-items/101,/detail</tt> &#x2013; <tt>order_id</tt> is bound to <tt>101</tt>, <tt>item_id</tt> is bound to <tt>null</tt></li>
+<li><tt>/line-items/,493/detail</tt> &#x2013; <tt>order_id</tt> is bound to <tt>null</tt>, <tt>item_id</tt> is bound to <tt>493</tt></li>
+<li><tt>/line-items/,/detail</tt> &#x2013; <tt>order_id</tt> is bound to <tt>null</tt>, <tt>item_id</tt> is bound to <tt>null</tt></li>
+</ul>
+<p>Trailing comma separators MAY be omitted so the following path will also be matched:</p>
+<ul>
+
+<li><tt>/line-items/101/detail</tt>, <tt>order_id</tt> is bound to <tt>101</tt>, <tt>item_id</tt> is bound to <tt>null</tt></li>
+</ul>
+<p>If a component value contains the comma character, it must be percent encoded in the request path, for example given the pattern: <tt>/books/title,author</tt>, then:</p>
+<ul>
+
+<li><tt>/books/So%20Long%2C%20and%20Thanks%20for%20All%20the%20Fish,Douglas%20Adams</tt> will match, the comma character is percent encoded</li>
+<li><tt>/books/Eats,%20Shoots%20%26%20Leaves,Lynne%20Truss</tt> will not match, there being 2 comma characters in the matched range when only one is expected, and thus the match fails.</li>
+</ul></div></div>
+<div class="section">
+<h3><a name="Glob_Parameter_Matching"></a>Glob Parameter Matching</h3>
+<p>A Glob Parameter token matches zero or more characters up until the end of the string.</p>
+<div class="section">
+<h4><a name="Examples"></a>Examples</h4>
+<p>The pattern <tt>/foo/*</tt> will match the following paths:</p>
+<ul>
+
+<li><tt>/foo/</tt> &#x2013; matches the empty string</li>
+<li><tt>/foo/bar</tt> &#x2013; matches <tt>bar</tt></li>
+<li><tt>/foo/bar/</tt> &#x2013; matches <tt>bar/</tt></li>
+<li><tt>/foo/bar/baz</tt> &#x2013; matches <tt>bar/baz</tt></li>
+</ul></div></div></div>
+<div class="section">
+<h2><a name="Route_Pattern_Sets"></a>Route Pattern Sets</h2>
+<p>A Collection of Route Patterns is termed a Route Pattern Set. A Route Pattern Set MUST be unambiguous, meaning that for a given request path it should be possible to choose at most one Route Pattern from the set to match the request path.</p>
+<p>Route Patterns MUST be ordered within the Route Pattern Set from most specific pattern to least specific pattern. Matching of a request path against a Route Pattern Set MUST proceed from the most specific pattern to least specific pattern. Matching MUST stop at the first matching Route Pattern encountered.</p>
+<div class="section">
+<h3><a name="Equivalent_.26_Overlapping_Patterns"></a>Equivalent &amp; Overlapping Patterns</h3>
+<p>Equivalent or overlapping Route Patterns MUST NOT occur in the same Route Pattern Set.</p>
+<div class="section">
+<div class="section">
+<h5><a name="Equivalent_Patterns"></a>Equivalent Patterns</h5>
+<p>Named Patterns are equivalent if the only difference between the patterns is the names assigned to parameters</p>
+<div class="section">
+<h6><a name="Example"></a>Example</h6>
+<p>The following two patterns are not permitted in the same Route Pattern Set because the only difference is the name assigned to the Named Parameter:</p>
+<ul>
+
+<li><tt>/a/:b</tt></li>
+<li><tt>/a/:c</tt></li>
+</ul>
+<p>Both Named Patterns will match the exact same set of request paths, which causes ambiguity about which one should be chosen to match a given request path.</p></div></div>
+<div class="section">
+<h5><a name="Overlapping_Patterns"></a>Overlapping Patterns</h5>
+<p>Overlapping Patterns are Route Patterns where for a subset of request paths, more than one Route Pattern matches, and the Token Precedence Ordering described below does not help resolve which Route Pattern should be chosen.</p>
+<div class="section">
+<h6><a name="Overlapping_Modifiers"></a>Overlapping Modifiers</h6>
+<p>A Route Pattern Set MUST NOT contain two or more Named Patterns, which differ only in the use of a Modifier.</p></div>
+<div class="section">
+<h6><a name="Example"></a>Example</h6>
+<p>The following three patterns are not permitted in the same Route Pattern Set because the only difference is the modifier assigned to the Named Parameter:</p>
+<ul>
+
+<li><tt>/a/:b</tt></li>
+<li><tt>/a/:b?</tt></li>
+<li><tt>/a/:b*</tt></li>
+</ul></div>
+<div class="section">
+<h6><a name="Overlapping_Literal_.26_Glob_Pattern"></a>Overlapping Literal &amp; Glob Pattern</h6>
+<p>A Glob Pattern MUST NOT overlap with a Literal Pattern in the same Route Pattern Set</p></div>
+<div class="section">
+<h6><a name="Example"></a>Example</h6>
+<p>The following Literal and Glob Pattern overlap, because the Glob Pattern will also match the same request path as the Literal Pattern</p>
+<ul>
+
+<li><tt>/foo/bar/</tt></li>
+<li><tt>/foo/bar/*</tt></li>
+</ul></div>
+<div class="section">
+<h6><a name="Overlapping_Literal_.26_Optional_Name_Pattern"></a>Overlapping Literal &amp; Optional Name Pattern</h6>
+<p>An Optional Named Pattern MUST NOT overlap with a Literal Pattern in the same Route Pattern Set</p></div>
+<div class="section">
+<h6><a name="Example"></a>Example</h6>
+<p>The following Literal and Optional Name Pattern overlap, because the Optional Name Pattern will also match the same request path as the Literal Pattern.</p>
+<ul>
+
+<li><tt>/foo/bar/</tt></li>
+<li><tt>/foo/bar/:baz?</tt></li>
+</ul></div></div></div></div>
+<div class="section">
+<h3><a name="Pattern_Ordering"></a>Pattern Ordering</h3>
+<p>Patterns MUST be ordered in reverse lexicographical ordering. As a consequence, the longest path sharing a common prefix will be matched first.</p>
+<div class="section">
+<h4><a name="Example"></a>Example</h4>
+<p>Given the following Route Pattern Set:</p>
+<ul>
+
+<li><tt>/a</tt></li>
+<li><tt>/b</tt></li>
+<li><tt>/c/d</tt></li>
+<li><tt>/c/d/a/1</tt></li>
+<li><tt>/a/b/c/d/e/</tt></li>
+</ul>
+<p>The expected ordering of this set is:</p>
+<ul>
+
+<li><tt>/c/d/a/1</tt></li>
+<li><tt>/c/d</tt></li>
+<li><tt>/b</tt></li>
+<li><tt>/a/b/c/d/e/</tt></li>
+<li><tt>/a</tt></li>
+</ul></div></div>
+<div class="section">
+<h3><a name="Token_Precedence"></a>Token Precedence</h3>
+<p>The different token types are assigned a precedence order from most specific to least specific, which enables a deterministic sort order to be determined for a Route Pattern Set.</p>
+<div class="section">
+<h4><a name="Literal_Values_and_Path_Separators"></a>Literal Values and Path Separators</h4>
+<p>Literal Values and Path Separators have the highest precedence as they require an exact match. Literal values are ordered in reverse lexicographical order, so that longer literal tokens are tested before shorter tokens.</p></div>
+<div class="section">
+<h4><a name="Compound_Named_Parameters"></a>Compound Named Parameters</h4>
+<p>A Compound Named Parameter has second highest precedence, as the requirement to match the comma characters within the matching value makes it more specific than a Named Parameter.</p></div>
+<div class="section">
+<h4><a name="Optional_Compound_Name_Parameters"></a>Optional Compound Name Parameters</h4>
+<p>An Optional Compound Named Parameter has third highest precedence, it is less specific than a Compound Named Parameter because it MAY match an empty string.</p></div>
+<div class="section">
+<h4><a name="Named_Parameters"></a>Named Parameters</h4>
+<p>A Named Parameter has fourth highest precedence, matching one or more characters until the next Path Separator or end of string.</p></div>
+<div class="section">
+<h4><a name="Optional_Named_Parameters"></a>Optional Named Parameters</h4>
+<p>An Optional Named Parameter has fifth highest precedence, matching zero or more characters, not including the Path Separator until the end of string.</p></div>
+<div class="section">
+<h4><a name="Eager_Named_Parameters"></a>Eager Named Parameters</h4>
+<p>An Eager Named Parameter has sixth highest precedence, matching one or more characters, including the Path Separator until the end of string.</p></div>
+<div class="section">
+<h4><a name="Glob_Parameters"></a>Glob Parameters</h4>
+<p>Glob Parameters have lowest precedence, as they are the least specific pattern, matching zero or more characters until the end of string.</p></div></div>
+<div class="section">
+<h3><a name="Examples"></a>Examples</h3>
+<p>Given the following Route Pattern Set:</p>
+<ul>
+
+<li><tt>/*</tt></li>
+<li><tt>/foo/*</tt></li>
+<li><tt>/a/:p1</tt></li>
+<li><tt>/a/:p1/c</tt></li>
+<li><tt>/:p1/b/c</tt></li>
+<li><tt>/b/:p1?</tt></li>
+<li><tt>/b/c/:p1*</tt></li>
+<li><tt>/a/:p1/c/:p2</tt></li>
+</ul>
+<p>The expected ordering of these Route Patterns from most specific to least specific is:</p>
+<ul>
+
+<li><tt>/foo/*</tt></li>
+<li><tt>/b/c/:p1*</tt></li>
+<li><tt>/b/:p1?</tt></li>
+<li><tt>/a/:p1/c/:p2</tt></li>
+<li><tt>/a/:p1/c</tt></li>
+<li><tt>/a/:p1</tt></li>
+<li><tt>/:p1/b/c</tt></li>
+<li><tt>/*</tt></li>
+</ul>
+<div class="section">
+<h4><a name="Example_Ordering_Implementation"></a>Example Ordering Implementation</h4>
+<p><b>This section is non normative</b></p>
+<p>One means by which the specified Route Pattern Ordering can be implemented is to convert each pattern to a canonical string representation and then order the canonical strings in reverse lexicographical order. To accomplish this each different parameter token in the pattern is replaced with a single low value character as shown in the following list, with the lowest precedence pattern getting the lowest value character, and the highest precedence getting the highest value character.</p>
+<ul>
+
+<li>Glob              -&gt; &#x2018;<tt>!</tt>&#x2019;</li>
+<li>Eager Named       -&gt; &#x2018;<tt>#</tt>&#x2019;</li>
+<li>Optional Named    -&gt; &#x2018;<tt>$</tt>&#x2019;</li>
+<li>Named             -&gt; &#x2018;<tt>'</tt>&#x2019;</li>
+<li>Optional Compound -&gt; &#x2018;<tt>(</tt>&#x2019;</li>
+<li>Compound          -&gt; &#x2018;<tt>)</tt>&#x2019;</li>
+</ul>
+<p>By applying this table to the patterns in the previous example we can see than the canonical strings for each pattern is:</p>
+<ul>
+
+<li><tt>/foo/!</tt></li>
+<li><tt>/b/c/#</tt></li>
+<li><tt>/b/:$</tt></li>
+<li><tt>/a/'/c/'</tt></li>
+<li><tt>/a/'/c</tt></li>
+<li><tt>/a/'</tt></li>
+<li><tt>/'/b/c</tt></li>
+<li><tt>/!</tt></li>
+</ul>
+<p>Because the substitute characters used fall in the <a href="#reserved-characters">Reserved Character Set</a>, they will never overlap with any literal tokens, and thus never result in any ambiguous overlap between patterns.</p></div></div></div>
+</body>
+</html>

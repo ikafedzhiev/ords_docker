@@ -1,0 +1,63 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: {{ name }}
+spec:
+    selector:
+      app: {{ name }}
+    ports:
+    - name: {{ name }}-http
+      port: 8080
+      targetPort: 8080
+      protocol: TCP
+    type: NodePort
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ name }}
+  labels:
+    app: {{ name }}
+spec:
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: {{ name }}
+    spec:
+      containers:
+        - name: {{ name }}
+          image: dsl.melexis.com:5000/viiper/ords:{{ version }}
+          imagePullPolicy: Always
+          ports:
+            - 
+              containerPort: 8080
+              name: {{ name }}-http
+          command:
+            - "/app/ords_run.sh"
+          resources:
+            requests:
+              memory: 512Mi
+            limits:
+              memory: 1024Mi
+          env:
+            - name: DB_HOSTNAME
+              value: {{ DB_HOSTNAME }}
+            - name: DB_SID
+              value: {{ DB_SID }}
+            - name: ORDS_PUBLIC_USER_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ordspublicuser
+                  key: password
+            - name: ADDITIONAL_DBS
+              value: {{ ADDITIONAL_DBS }}
+          livenessProbe:
+            httpGet:
+              path: /ords/apps/system/health
+              port: {{ name }}-http
+            initialDelaySeconds: 180
+            timeoutSeconds: 60
+            periodSeconds: 120
+

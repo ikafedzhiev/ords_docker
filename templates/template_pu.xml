@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+   <comment>Saved on Mon Jun 26 11:35:16 CEST 2017</comment>
+   <entry key="db.hostname">@db.hostname@</entry>
+   <entry key="db.password">@db.ords_public_user_password@</entry>
+   <entry key="db.sid">@db.sid@</entry>
+   <entry key="db.username">ORDS_PUBLIC_USER</entry>
+</properties>
